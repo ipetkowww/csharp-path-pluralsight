@@ -1,48 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Decision_and_Iteration_Statements;
 
-// int age = 23;
-//
-// bool result = age == 23;
-// Console.WriteLine("Age is 23: " + result);
-//
-// result = age > 23;
-// Console.WriteLine("Age is greater than 23: " + result);
-//
-// result = (age >= 18) && (age <= 65);
-// Console.WriteLine("Age is between 18 and 65: " + result);
+int amount = 1234;
+int months = 12;
 
-Console.Write("Enter the age of the new candidate: ");
-int age = int.Parse(Console.ReadLine()!);
+Utilities.CalculateYearlyWage(amount, months);
 
-// if (age < 18)
-// {
-//     Console.WriteLine("Candidate is too young.");
-//     Console.WriteLine("Send email to the candidate.");
-// }
-// else if (age > 65)
-// {
-//     Console.WriteLine("Candidate is too old.");
-// }
-// else
-// {
-//     Console.WriteLine("Candidate is eligible.");
-//     Console.WriteLine("Start with the application process.");
-// }
+int yearlyWage = Utilities.GetYearlyWage(amount, months);
+Console.WriteLine($"Yearly Wage: {yearlyWage}");
 
-switch (age)
-{
-    case < 18:
-        Console.WriteLine("Candidate is too young.");
-        Console.WriteLine("Send email to the candidate.");
-        break;
-    case > 65:
-        Console.WriteLine("Candidate is too old.");
-        break;
-    case 23:
-        Console.WriteLine("Wow, exactly what we are looking for!");
-        break;
-    default:
-        Console.WriteLine("Candidate is eligible.");
-        Console.WriteLine("Start with the application process.");
-        break;
-}
+Console.WriteLine(Utilities.SumNumbers(10, 20));
+Console.WriteLine(Utilities.SumNumbers(10, 20, 30));
+
+// Named arguments
+Console.WriteLine(Utilities.SumNumbers(third: 30, first: 10, second: 20));
+
+// Expression bodied members
+Utilities.PrintMessage("Hello, World!");
